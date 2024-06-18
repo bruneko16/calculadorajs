@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <link rel="stylesheet" href="style.css">
+
+<head>
+  
+    <title>Calculadora de operações basicas</title>
+</head>
+<body>
+    <h1>Calculadora de operações basicas</h1>
+
+    <input type="number" id="num1" placeholder="Digite o primeiro número">
+    <input type="number" id="num2" placeholder="Digite o segundo número">
+    <button onclick="calcularMultiplicacao()">Calcular Multiplicação</button>
+    <button onclick="calcularDivisao()">Calcular Divisão</button>
+<button onclick="calcularsoma()">calcular soma</button>
+<button onclick="calcularsub()">calcular subtracao</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMultiplicacao() {
+            
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+
+           
+            let resultado = multiplicacao(num1, num2);
+            document.getElementById('resultado').innerText = 'O resultado da multiplicação é: ' + resultado;
+        }
+
+        function calcularDivisao() {
+           
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+
+            
+            if (num2 === 0) {
+                document.getElementById('resultado').innerText = 'Erro: Divisão por zero não é permitida.';
+                return;
+            }
+
+           
+            let resultado = divisao(num1, num2);
+            document.getElementById('resultado').innerText = 'O resultado da divisão é: ' + resultado;
+        }
+        function calcularsoma() {
+            
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+
+           
+            let resultado = soma(num1, num2);
+            document.getElementById('resultado').innerText = 'O resultado da soma é: ' + resultado;
+        }
+        function calcularsub() {
+            
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+
+           
+            let resultado = subtracao(num1, num2);
+            document.getElementById('resultado').innerText = 'O resultado da subtração é: ' + resultado;
+        }
+            
+
+        function multiplicacao(num1, num2) {
+            return num1 * num2;
+        }
+
+        function divisao(num1, num2) {
+            return num1 / num2;
+        }
+        function soma(num1, num2){
+            return num1 + num2;
+        }
+        function subtracao(num1, num2){
+            return num1 - num2;
+        }
+    </script>
+</body>
+</html>
